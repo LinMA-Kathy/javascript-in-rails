@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row my-5">
+    <div class="col">
+      <p style="color: green"><%= notice %></p>
+
+      <h1>Monuments</h1>
+
+      <div id="monuments">
+        <% @monuments.each do |monument| %>
+          <%= render monument %>
+          <p>
+            <%= link_to "Show this monument", monument %>
+          </p>
+        <% end %>
+      </div>
+
+<div data-controller="toggle">
+  <button class="btn btn-primary mt-4" data-action="click->toggle#fire">Add a new mocument</button>
+
+  <div class="mt-3 d-none" data-toggle-target="togglableElement">
+    <%= render "form"%>
+  </div>
+
+</div>
+
+    </div>
+  </div>
+</div>
